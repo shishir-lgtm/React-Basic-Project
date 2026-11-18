@@ -15,9 +15,19 @@ function App() {
   }
    
   const handleAddStudent=()=>{
+    if (!name.trim()){
+    return alert("input field is empty")
+    }
+    
     const newStudent={
     id:Date.now(),
     name:name
+  }
+  const duplicateStudentEntry=studentList.some((student)=>{
+     return student.name.toLowerCase() === newStudent.name.trim().toLowerCase()
+  })
+  if(duplicateStudentEntry){
+    return alert("student already exist")
   }
     setStudentList((students)=>{
      return  [...students,newStudent]
