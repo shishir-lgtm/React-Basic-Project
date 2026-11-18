@@ -21,6 +21,11 @@ function App() {
     })
     setName("")
   }
+  const handleDeleteStudent = (id) => {
+  setStudentList((previousStudents) => {
+    return previousStudents.filter((student) => student.id !== id);
+  });
+};
   useEffect(()=>{
    console.log("Student List is changed")
   },[studentList])
@@ -40,7 +45,10 @@ function App() {
       >
         Add Student
       </button>
-      <StudentList studentList={studentList}/>
+      <StudentList 
+      studentList={studentList}
+      onDelete={handleDeleteStudent}
+      />
     </div>
   )
 }

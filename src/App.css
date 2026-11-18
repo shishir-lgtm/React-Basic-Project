@@ -47,3 +47,17 @@ button:hover {
   align-items: center;
   padding: 12px 0;
 }
+.delete-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #b91c1c;
+}
