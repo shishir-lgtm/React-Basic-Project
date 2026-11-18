@@ -5,7 +5,10 @@ import { useState,useEffect } from "react";
 
 function App() {
   const [name,setName]=useState("")
-  const[studentList,setStudentList]=useState(students)
+  const[studentList,setStudentList]=useState(()=>{
+    const savedStudents=localStorage.getItem("students");
+  return savedStudents ? JSON.parse(savedStudents) : students;
+  })
  
   const handleInput=(e)=>{
       setName(e.target.value)
@@ -22,12 +25,13 @@ function App() {
     setName("")
   }
   const handleDeleteStudent = (id) => {
-  setStudentList((previousStudents) => {
-    return previousStudents.filter((student) => student.id !== id);
+  setStudentList((students) => {
+    return students.filter((student) => student.id !== id);
   });
 };
   useEffect(()=>{
    console.log("Student List is changed")
+     localStorage.setItem("students", JSON.stringify(studentList));
   },[studentList])
   return (
     <div className="app-container">
@@ -37,7 +41,7 @@ function App() {
         type="text"
         value={name}
         onChange={handleInput}
-        placeholder="Enter name!"
+        placeholder="Enter name"
       />
       <button
         type="button"

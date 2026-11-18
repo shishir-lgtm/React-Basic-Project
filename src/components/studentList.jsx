@@ -1,6 +1,7 @@
 const StudentList = ({studentList,onDelete}) => {
   return (
     <div>
+        <h2>Total Students: {studentList.length}</h2>
     { studentList.map((student)=>{
         return(
         <div className="student-item"  key={student.id}>
