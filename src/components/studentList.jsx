@@ -2,14 +2,11 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { validateStudentName } from "../utility/studentValidation";
-
 import { addStudent,deleteStudent } from "../store/studentSlice";
-const StudentList = () => {
+ const StudentList = () => {
 
-  // Local state for input
   const [name, setName] = useState("");
 
-  // Read student list from Redux
   const studentList = useSelector(
     (state) => state.students
   );
@@ -20,7 +17,6 @@ const StudentList = () => {
     setName(e.target.value);
   };
 
-  // Add student
 const handleAddStudent = () => {
 
   const validation = validateStudentName(name, studentList);
@@ -39,12 +35,9 @@ const handleAddStudent = () => {
   setName("");
 };
 
-  // Delete student
   const handleDeleteStudent = (id) => {
     dispatch(deleteStudent(id));
   };
-
- 
 
   return (
     <div>
