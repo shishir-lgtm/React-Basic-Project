@@ -7,4 +7,4 @@ learnings
 5. list won`t last on refresh so using LS would be better choice and we are geting teh list at mount of app.jsx it would include the add or delete students also
 6. now i am covering the edge cases for add opertion ==>first. empty input 2nd.duplicate entry
    here we need to check the casing also beacsue "Skd" and skd would be treated as different but we would be considering both as same
-   7.o whenever dealing wiht input data we need to cnosider casing,empty vlaue,spaces as well.
+7. o whenever dealing wiht input data we need to consider casing,empty vlaue,spaces as well.

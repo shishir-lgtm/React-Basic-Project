@@ -101,19 +101,17 @@ The time taken to download the resources.
 
 Here size, resolution matters.
 
-14. Total Rendering Time of LCP
+4.5 Total Rendering Time of LCP
 
 Total rendering time of LCP.
 
-15. Interaction to Next Paint (INP)
+4.6 Interaction to Next Paint (INP)
 
 INP is related with user interaction (have discussed in performance in detail).
 
-16. Cumulative Layout Shift (CLS)
+4.7 Cumulative Layout Shift (CLS)
 
 CLS is mostly related with CSS.
-
----
 
 Summary
 

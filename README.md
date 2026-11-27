@@ -2,48 +2,85 @@
 
 ## Overview
 
-A simple Student Management application built using React.js and Vite. It allows users to manage a list of students with add and delete functionality.
+A React application built with Vite and Redux Toolkit to manage student records with add, delete, input validation, and LocalStorage persistence.
 
 ## Features
 
-- **Display Students:** Displays the list of students using the `StudentList` component.
-- **Add Student:** Adds a new student using an input field and button.
-- **Delete Student:** Removes a student from the list using the Delete button.
-- **Student Count:** Displays the total number of students.
-- **LocalStorage Integration:** Saves student data in LocalStorage so the data persists after refreshing the page.
-- **useEffect:** Tracks changes in the student list and synchronizes the updated data with LocalStorage.
-
-## Concepts Practiced
-
-- React `useState` hook for state management.
-- React `useEffect` hook for handling side effects.
-- Props for passing data and functions from parent to child components.
-- Array methods: `map()`, `filter()`, and spread operator.
-- Lazy initialization of state.
-- LocalStorage methods: `getItem()` and `setItem()`.
-- JSON methods: `JSON.parse()` and `JSON.stringify()`.
-
-## Component Structure
-
-```text
-App
- ├── Input Field
- ├── Add Student Button
- └── StudentList
-      ├── Total Student Count
-      ├── Student Name
-      └── Delete Button
-```
-
-## Screen Recording
-
-[Watch the Student Management App Demo]
-(https://drive.google.com/file/d/1R0OkuXF6qW-HEm4wQi1Imrmw4oFacsTx/view?usp=drivesdk)
+- Add and delete students.
+- Display student list and total count.
+- Validate empty, invalid, and duplicate names.
+- Persist student data using LocalStorage.
+- Load saved data after page refresh.
 
 ## Tech Stack
 
 - React.js
 - Vite
 - JavaScript
+- Redux Toolkit
+- React Redux
 - CSS
-- Browser LocalStorage
+- LocalStorage
+
+## Concepts Practiced
+
+- React Hooks: `useState`, `useSelector`, `useDispatch`.
+- Redux Store, Slice, Actions, and Reducers.
+- Redux Listener Middleware for side effects.
+- Input validation using regular expressions.
+- Array and string methods.
+- LocalStorage and JSON methods.
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   └── studentList.jsx
+├── data/
+│   └── student.json
+├── store/
+│   ├── store.js
+│   └── studentSlice.js
+├── utils/
+│   └── studentValidation.js
+├── App.jsx
+└── main.jsx
+```
+
+## Data Flow
+
+```text
+User Interaction
+       |
+       v
+StudentList.jsx
+       |
+       v
+Input Validation
+       |
+       v
+Dispatch Action
+       |
+       v
+Redux Reducer
+       |
+       v
+Redux Store
+       |
+       v
+Listener Middleware
+       |
+       v
+LocalStorage
+```
+
+- **StudentList:** Handles UI and user interactions.
+- **Validation:** Checks input and duplicate names.
+- **Slice:** Manages student state and actions.
+- **Store:** Configures Redux and Listener Middleware.
+- **Middleware:** Saves updated state to LocalStorage.
+
+## Screen Recording
+
+[Watch the Student Management App Demo](https://drive.google.com/file/d/1R0OkuXF6qW-HEm4wQi1Imrmw4oFacsTx/view?usp=drivesdk)
